@@ -12,6 +12,8 @@ import Patients from './routes/Patients';
 import Employees from './routes/Employees';
 import Billings from './routes/Billings';
 
+
+// Roter 
 const router = createBrowserRouter([
   {
     path: "/",
