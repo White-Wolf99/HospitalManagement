@@ -1,0 +1,720 @@
+###
+GET http://localhost:5000/api/doctor
+###
+GET http://localhost:5000/api/employee
+###
+GET http://localhost:5000/api/employee_email
+###
+GET http://localhost:5000/api/employee_mobile_num
+###
+GET http://localhost:5000/api/nurse
+###
+GET http://localhost:5000/api/administrator
+###
+GET http://localhost:5000/api/department
+###
+GET http://localhost:5000/api/patient
+###
+GET http://localhost:5000/api/patient_email
+###
+GET http://localhost:5000/api/patient_phone_number
+###
+GET http://localhost:5000/api/ward
+###
+GET http://localhost:5000/api/floor
+###
+GET http://localhost:5000/api/medical_supplies
+###
+GET http://localhost:5000/api/medicines
+###
+GET http://localhost:5000/api/supplier
+###
+GET http://localhost:5000/api/supplier_phone_number
+###
+GET http://localhost:5000/api/billing
+###
+GET http://localhost:5000/api/resources
+###
+GET http://localhost:5000/api/supplies
+###
+GET http://localhost:5000/api/has
+###
+GET http://localhost:5000/api/treats
+###
+GET http://localhost:5000/api/department_head
+
+
+
+
+
+
+// ----------------------------------
+
+
+
+###
+POST http://localhost:5000/api/insert_floor
+content-type: application/json
+
+{
+    "floor_number": 6,
+    "ward_count": 10
+}
+
+###
+POST http://localhost:5000/api/insert_ward
+content-type: application/json
+
+{
+    "ward_number": 304,
+    "capacity": 15,
+    "type_of_ward": "Sergical",
+    "floor_number": 3
+}
+
+###
+POST http://localhost:5000/api/insert_patient
+content-type: application/json
+
+{ 
+    "patient_id" : 7,
+    "date_of_birth" : "1999-02-02",
+    "fullname" : "afif",
+    "gender" : "Male",
+    "street" : "57th street",
+    "city" : "Dhaka",
+    "thana" : "Gulshan",
+    "house_no" : "23",
+    "ward_number" : 102,
+    "floor_number" : 1
+}
+
+
+
+
+###
+POST http://localhost:5000/api/insert_department
+content-type: application/json
+
+{
+    "department_id": 3,
+    "department_name": "Dermatology",
+    "location": "Building C, 3rd floor",
+    "head_of_dep": "Afzal K rahman"
+}
+
+
+
+###
+POST http://localhost:5000/api/insert_employee
+content-type: application/json
+
+{
+    "employee_id": 7,
+    "last_name": "Rahman",
+    "middle_name": "K",
+    "first_name": "Afzal",
+    "salary": 50000,
+    "shift": "Morning",
+    "street": "15th Street",
+    "thana": "Banani",
+    "house_number": "42",
+    "department_id": 12
+}
+
+###
+POST http://localhost:5000/api/insert_doctor
+content-type: application/json
+
+{
+    "employee_id": 7,
+    "specialization": "Dermatology",
+    "years_of_experience": 10
+}
+
+###
+POST http://localhost:5000/api/insert_employee_email
+content-type: application/json
+
+{
+    "employee_id": 7,
+    "email": "afzal.rahman@example.com"
+}
+
+###
+POST http://localhost:5000/api/insert_employee_mobile_num
+content-type: application/json
+
+{
+    "employee_id": 7,
+    "mobile_num": "01234567890"
+}
+
+
+
+###
+POST http://localhost:5000/api/insert_nurse
+content-type: application/json
+
+{
+    "employee_id": 5,
+    "nurse_role": "Pediatric Care"
+}
+
+###
+POST http://localhost:5000/api/insert_administrator
+content-type: application/json
+
+{
+    "employee_id": 3,
+    "admin_role": "HR Manager"
+}
+
+
+###
+POST http://localhost:5000/api/insert_patient_email
+content-type: application/json
+
+{
+    "patient_id": 7,
+    "email": "afif.patient@example.com"
+}
+
+
+###
+POST http://localhost:5000/api/insert_patient_phone_number
+content-type: application/json
+
+{
+    "patient_id": 7,
+    "phone_number": "01876543210"
+}
+
+
+
+###
+POST http://localhost:5000/api/insert_resources
+content-type: application/json
+
+{
+    "resource_id": 5,
+    "resource_type": "Equipments",
+    "cost_per_unit": 5000,
+    "quantity": 10
+}
+
+###
+POST http://localhost:5000/api/insert_medical_supplies
+content-type: application/json
+
+{
+    "resource_id": 5,
+    "name": "Syringe",
+    "type": "Equipment",
+    "size": "Small"
+}
+
+
+###
+POST http://localhost:5000/api/insert_medicines
+content-type: application/json
+
+{
+    "resource_id": 6,
+    "medicine_name": "Paracetamol",
+    "manufacturer": "Pharma Ltd",
+    "expiry_date": "2025-01-01"
+}
+
+
+###
+POST http://localhost:5000/api/insert_supplier
+content-type: application/json
+
+{
+    "supplier_id": 3,
+    "name": "Health Supplies Co.",
+    "supply_type": "Bed"
+}
+###
+POST http://localhost:5000/api/insert_supplier_phone_number
+content-type: application/json
+
+{
+    "supplier_id": 3,
+    "phone_number": "01765482109"
+}
+###
+POST http://localhost:5000/api/insert_billing
+content-type: application/json
+
+{
+    "billing_id": 3,
+    "room_charge": 5000,
+    "doctor_fees": 3000,
+    "medicine_bill": 1500,
+    "billing_date": "2024-11-01",
+    "patient_id": 7
+}
+
+###
+POST http://localhost:5000/api/insert_supplies
+content-type: application/json
+
+{
+    "resource_id": 5,
+    "supplier_id": 3
+}
+###
+POST http://localhost:5000/api/insert_has
+content-type: application/json
+
+{
+    "department_id": 3,
+    "resource_id": 5
+}
+###
+POST http://localhost:5000/api/insert_treats
+content-type: application/json
+
+{
+    "employee_id": 7,
+    "patient_id": 7
+}
+###
+POST http://localhost:5000/api/insert_department_head
+content-type: application/json
+
+{
+    "employee_id": 7,
+    "dep_head_id":4,
+    "start_date": "2022-01-01",
+    "end_date": "2025-01-01"
+}
+
+
+
+
+// ----------------------------------
+
+
+###
+DELETE http://localhost:5000/api/delete/patient
+Content-Type: application/json
+
+{
+    "patient_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/employee
+Content-Type: application/json
+
+{
+    "employee_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/employee_email
+Content-Type: application/json
+
+{
+    "email": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/employee_mobile
+Content-Type: application/json
+
+{
+    "mobile_num": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/doctor
+Content-Type: application/json
+
+{
+    "employee_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/nurse
+Content-Type: application/json
+
+{
+    "employee_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/administrator
+Content-Type: application/json
+
+{
+    "employee_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/department
+Content-Type: application/json
+
+{
+    "department_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/patient_email
+Content-Type: application/json
+
+{
+    "email": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/patient_phone
+Content-Type: application/json
+
+{
+    "phone_number": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/ward
+Content-Type: application/json
+
+{
+    "ward_number": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/floor
+Content-Type: application/json
+
+{
+    "floor_number": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/medical_supply
+Content-Type: application/json
+
+{
+    "resource_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/medicine
+Content-Type: application/json
+
+{
+    "resource_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/supplier
+Content-Type: application/json
+
+{
+    "supplier_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/supplier_phone
+Content-Type: application/json
+
+{
+    "phone_number": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/billing
+Content-Type: application/json
+
+{
+    "billing_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/resource
+Content-Type: application/json
+
+{
+    "resource_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/supply
+Content-Type: application/json
+
+{
+    "resource_id": 7,
+    "supplier_id": 1
+}
+
+###
+DELETE http://localhost:5000/api/delete/has
+Content-Type: application/json
+
+{
+    "department_id": 7,
+    "resource_id" : 1
+}
+
+###
+DELETE http://localhost:5000/api/delete/treats
+Content-Type: application/json
+
+{
+    "employee_id":2,
+    "patient_id": 7
+}
+
+###
+DELETE http://localhost:5000/api/delete/department_head
+Content-Type: application/json
+
+{
+    "employee_id": 7,
+    "dep_head_id":2
+}
+
+
+// -----------------------------------
+
+
+###
+# Update Employee
+PUT http://localhost:5000/api/update/employee
+Content-Type: application/json
+
+{
+    "Employee_id": 1,
+    "Last_Name": "Maxwell",
+    "Middle_Name": "J",
+    "First_Name": "Glenn",
+    "Salary": 85000,
+    "Shift": "Night",
+    "Street": "Maple St",
+    "Thana": "Gulshan",
+    "House_Number": "123",
+    "department_id": 2
+}
+
+###
+# Update Employee_email
+PUT http://localhost:5000/api/update/employee_email
+Content-Type: application/json
+
+{
+    "Employee_id": 1,
+    "email": "john.doe@example.com"
+}
+###
+# Update Employee_mobile_num
+PUT http://localhost:5000/api/update/employee_mobile_num
+Content-Type: application/json
+
+{
+    "Employee_id": 1,
+    "mobile_num": "1234567890"
+}
+###
+# Update Doctor
+PUT http://localhost:5000/api/update/doctor
+Content-Type: application/json
+
+{
+    "Employee_id": 1,
+    "Specialization": "Cardiology",
+    "Years_of_Experience": 15
+}
+###
+# Update Nurse
+PUT http://localhost:5000/api/update/nurse
+Content-Type: application/json
+
+{
+    "Employee_id": 2,
+    "nurse_role": "Head Nurse"
+}
+###
+# Update Administrator
+PUT http://localhost:5000/api/update/administrator
+Content-Type: application/json
+
+{
+    "Employee_id": 3,
+    "Admin_Role": "Finance Manager"
+}
+###
+# Update Department
+PUT http://localhost:5000/api/update/department
+Content-Type: application/json
+
+{
+    "department_id": 2,
+    "Department_Name": "Surgery",
+    "Location": "Building B",
+    "head_of_dep": "Doe Jane"
+}
+###
+# Update Patient
+PUT http://localhost:5000/api/update/patient
+Content-Type: application/json
+
+{
+    "patient_id": 7,
+    "date_of_birth": "1985-01-01",
+    "fullname": "Jane Doe",
+    "gender": "Female",
+    "admission_date": "2024-11-15",
+    "street": "Elm St",
+    "city": "Dhaka",
+    "thana": "Banani",
+    "house_no": 45,
+    "ward_number": 3,
+    "floor_number": 2
+}
+###
+# Update Patient_email
+PUT http://localhost:5000/api/update/patient_email
+Content-Type: application/json
+
+{
+    "patient_id": 7,
+    "email": "jane.doe@example.com"
+}
+###
+# Update Patient_phone_number
+PUT http://localhost:5000/api/update/patient_phone_number
+Content-Type: application/json
+
+{
+    "patient_id": 7,
+    "phone_number": "9876543210"
+}
+###
+# Update Ward
+PUT http://localhost:5000/api/update/ward
+Content-Type: application/json
+
+{
+    "ward_number": 3,
+    "capacity": 20,
+    "type_of_ward": "ICU",
+    "floor_number": 2
+}
+###
+# Update Floor
+PUT http://localhost:5000/api/update/floor
+Content-Type: application/json
+
+{
+    "Floor_number": 2,
+    "ward_count": 10
+}
+###
+# Update Medical_Supplies
+PUT http://localhost:5000/api/update/medical_supplies
+Content-Type: application/json
+
+{
+    "resource_id": 101,
+    "Name": "Surgical Gloves",
+    "Type": "Disposable",
+    "Size": "Medium"
+}
+###
+# Update Medicines
+PUT http://localhost:5000/api/update/medicines
+Content-Type: application/json
+
+{
+    "resource_id": 202,
+    "medicine_name": "Paracetamol",
+    "manufacturer": "PharmaCorp",
+    "expiry_Date": "2025-12-31"
+}
+###
+# Update Supplier
+PUT http://localhost:5000/api/update/supplier
+Content-Type: application/json
+
+{
+    "supplier_id": 5,
+    "name": "MediSupply Inc.",
+    "Supply_Type": "Medical Equipment"
+}
+###
+# Update Supplier_phone_number
+PUT http://localhost:5000/api/update/supplier_phone_number
+Content-Type: application/json
+
+{
+    "supplier_id": 5,
+    "phone_number": "1122334455"
+}
+###
+# Update Billing
+PUT http://localhost:5000/api/update/billing
+Content-Type: application/json
+
+{
+    "Billing_ID": 101,
+    "room_charge": 2000,
+    "doctor_fees": 1500,
+    "medicine_Bill": 300,
+    "billing_date": "2024-11-18",
+    "patient_id": 7
+}
+###
+# Update Resources
+PUT http://localhost:5000/api/update/resources
+Content-Type: application/json
+
+{
+    "resource_id": 301,
+    "resoruce_type": "Furniture",
+    "cost_per_unit": 500,
+    "quantity": 10
+}
+###
+# Update Supplies
+PUT http://localhost:5000/api/update/supplies
+Content-Type: application/json
+
+{
+    "resource_id": 301,
+    "supplier_id": 5
+}
+###
+# Update Has
+PUT http://localhost:5000/api/update/has
+Content-Type: application/json
+
+{
+    "department_id": 5,
+    "resource_id": 301
+}
+###
+# Update Treats
+PUT http://localhost:5000/api/update/treats
+Content-Type: application/json
+
+{
+    "Employee_id": 1,
+    "patient_id": 7
+}
+###
+# Update Department_head
+PUT http://localhost:5000/api/update/department_head
+Content-Type: application/json
+
+{
+    "employee_id": 1,
+    "dep_head_id": 2,
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31"
+}
+
+
